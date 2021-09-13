@@ -8,12 +8,6 @@
   <description>Engine.IO Client Library for Java</description>
   <url>https://github.com/socketio/engine.io-client-java</url>
 
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
-
   <properties>
     <github.global.server>github</github.global.server>
   </properties>
@@ -25,13 +19,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
-  <scm>
-    <url>https://github.com/socketio/engine.io-client-java</url>
-    <connection>scm:git:https://github.com/socketio/engine.io-client-java.git</connection>
-    <developerConnection>scm:git:https://github.com/socketio/engine.io-client-java.git</developerConnection>
-    <tag>engine.io-client-1.0.1</tag>
-  </scm>
 
   <developers>
     <developer>
@@ -71,13 +58,10 @@
   </dependencies>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
     <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>godcomplex-repo-release</id>
+      <name>Internal Releases</name>
+      <url>https://artifactory.godcomplex.org/artifactory/libs-release-local/</url>
     </repository>
   </distributionManagement>
 
@@ -160,17 +144,6 @@
           <useReleaseProfile>false</useReleaseProfile>
           <releaseProfiles>release</releaseProfiles>
           <goals>deploy</goals>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.7</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
         </configuration>
       </plugin>
       <plugin>
